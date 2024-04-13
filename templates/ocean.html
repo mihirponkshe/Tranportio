@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courier Booking</title>
+    <style>
+        body {
+            font-family: "Open Sans", Arial, sans-serif;
+            line-height: 1.5;
+            font-size: 16px;
+            color: #333;
+            background-color: #f0f0f0;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('/static/assets/images/ocean-background.avif');
+            background-position:center;
+            background-size:cover;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 80%;
+            background-color: transparent;
+            border-radius: 10px;
+            padding: 40px;
+            box-sizing: border-box;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: stretch;
+        }
+        .container:hover
+        {
+            box-shadow: 0 0  10px white;
+            transition: 2s ease;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        
+        }
+
+        .form-group label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            box-sizing: border-box;
+            background-color:transparent;
+            color:white;
+        }
+
+        .submit-button, .button {
+            margin-left:125px;
+            width: 50%;
+            background-color:transparent;
+            color: #ffffff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .submit-button:hover, .button:hover {
+            box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+            background-color:darkorange;
+            step-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .step-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .blur {
+            filter: blur(10px);
+        }
+        .loading {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #ff5722;
+            border-radius: 50%;
+            animation: spin 1.5s linear infinite;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -25px;
+            margin-left: -25px;
+            z-index: 9999;
+
+            display: none; /* Initially hide the loader */
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        }
+    </style>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+    <div class="container">
+
+        <h2 style="display:flex;align-items:center;justify-content:center;color:white">Ocean Freight</h2>
+        <form action="http://127.0.0.1:5000/oceanFreight" method="post">
+            <div class="form-group prefilled">
+                <label for="email_ocean">Sender's Email:</label>
+                <input type="email" id="email_ocean" required name="email_ocean">
+            </div>
+
+            <div class="form-group">
+                <label for="sender_name_ocean">Sender's Name:</label>
+                <input type="text" id="sender_name_ocean" name="sender_name_ocean" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pickup_add_ocean">Pickup Address:</label>
+                <input type="text" id="pickup_add_ocean" name="pickup_add_ocean" required>
+            </div>
+
+            <div class="form-group">
+                <label for="receiver_name_ocean">Receiver's Name:</label>
+                <input type="text" id="receiver_name_ocean" name="receiver_name_ocean" required>
+            </div>
+
+            <div class="form-group">
+                <label for="delivery_add_ocean">Delivery Address:</label>
+                <input type="text" id="delivery_add_ocean" name="delivery_add_ocean" required>
+            </div>
+
+            <div class="form-group">
+                <label for="desc_ocean">Package Description:</label>
+                <textarea id="desc_ocean" name="desc_ocean" rows="5" required></textarea>
+            </div>
+            <div class="g-recaptcha" data-sitekey="6LdBGbMpAAAAAAqk1BMXaaHghFN0ftZhSwqLPusL"></div>
+             
+            <button type="submit" class="submit-button">Book</button>
+
+        </form>
+        <button class="button"><a href="/main" style="text-decoration: none; color: white;">Back</a></button>
+    </div>
+    <div class="loading"></div>
+</body>
+</html>

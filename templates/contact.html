@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Transport Website</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('/static/assets/images/contact-background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .container {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            border-style: none;
+
+        }
+        
+        h1 {
+            text-align: center;
+            color:white;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+        
+        .contact-form {
+            margin-top: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: calc(100% - 30px);
+            padding: 10px;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+            color:white;
+            margin-top: 5px;
+            background-color:transparent;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+        }
+        .container:hover
+        {
+            box-shadow: 0 0  10px white;
+            transition: 2s ease;
+        }
+        .form-group button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+        
+        .form-group button {
+            background: transparent;
+
+        }
+        .form-group button:hover {
+            background-color: #FF4D00;
+        }
+        #labels{
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <div class="contact-form">
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="645596f5-ccee-4c08-a70d-af9a83889f40">
+                <div class="form-group">
+                    <label for="name" id="labels">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" id="labels">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" id="labels">Contact No:</label>
+                    <input type="text" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message"id="labels">Your Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit"id="labels">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

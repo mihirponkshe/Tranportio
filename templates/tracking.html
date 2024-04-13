@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freight Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('/static/assets/images/track-background.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 500px;
+            height: 500px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 7px rgba(0,0,0,0.2);
+        }
+        .container:hover
+        {
+            box-shadow: 0 0  10px white;
+            transition: 2s ease;
+        }
+        h1, h2 {
+            text-align: center;
+            color: white;
+        }
+        form {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            border-style:none ;
+        }
+        label {
+            display: block;
+            margin-bottom: 30px;
+            margin-top: 60px;
+            color: white;
+        }
+        input[type="email"] {
+            width: calc(100% - 42px);
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            background:transparent;
+            border-radius: 5px;
+            color: white;
+            background-color: none;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Freight Details</h1>
+    <form action="http://127.0.0.1:5000/checkAndSendEmail" method="POST" id="tracking-form" >
+        <label for="email">Enter your email:</label>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+        <input type="submit" value="Get Detail" style="margin-top: 25px;">
+    </form>
+</div>
+</body>
+</html>
